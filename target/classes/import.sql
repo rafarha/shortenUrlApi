@@ -1,0 +1,1 @@
+insert into url (id_url, url_adress, short_url_adress) values (1, 'Caneta', 'teste');

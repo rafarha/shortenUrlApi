@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.css}"
+          rel="stylesheet" media="screen"/>
+    <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}"
+          rel="stylesheet"/>
+    <link type="text/css" th:href="@{/css/customStyle.css}"
+          rel="stylesheet"/>
+    <title th:text="#{${title}}"></title>
+</head>
+<h1 class="ps-page-header" th:text="#{${nmPagina}}" th:fragment="cabecalho"></h1>
+<div class="ps-footer" th:fragment="footer">
+    © Copyright 2019
+</div>
+</html>

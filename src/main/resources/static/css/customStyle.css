@@ -1,0 +1,19 @@
+body{
+    padding: 20px
+}
+.ps-required > .control-label:after{
+    content:"*";
+}
+
+.ps-footer {
+  text-align: center;
+}
+
+.ps-page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eee;
+  font-size: 30px;
+
+
+}
