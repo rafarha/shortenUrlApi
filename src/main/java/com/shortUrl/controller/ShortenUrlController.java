@@ -91,6 +91,7 @@ public class ShortenUrlController {
 	ModelAndView modelAndView = new ModelAndView("shortenUrl");
 	modelAndView.addObject("title", "shortenUrl.title");
 	modelAndView.addObject("nmPagina", "shortenUrl.nmPagina");
+
 	return modelAndView;
     }
 
