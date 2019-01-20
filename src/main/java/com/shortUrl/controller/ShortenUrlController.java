@@ -17,8 +17,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 
 /**
  * Created by rafael.alves on 20/01/2019.
@@ -30,12 +28,7 @@ public class ShortenUrlController {
     @Autowired
     private com.shortUrl.repository.Url url;
 
-    SecureRandom secureRandom;
-
-    public ShortenUrlController() throws NoSuchAlgorithmException {
-	secureRandom = SecureRandom.getInstance("SHA1PRNG");
-
-    }
+    Long id = 2019l;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public RedirectView redirectToUrl(@PathVariable Long id) {
@@ -64,7 +57,7 @@ public class ShortenUrlController {
 	}
 
 	//Set a ID to URL Shorted
-	pUrl.setIdUrl(secureRandom.nextLong());
+	pUrl.setIdUrl(getidShortenUrl());
 	//Save the URL at database
 	this.url.save(pUrl);
 	//Get the URL base of application
@@ -93,6 +86,10 @@ public class ShortenUrlController {
 	modelAndView.addObject("nmPagina", "shortenUrl.nmPagina");
 
 	return modelAndView;
+    }
+
+    private Long getidShortenUrl() {
+	return ++id;
     }
 
     //Resposable to verify if URL is formatted
